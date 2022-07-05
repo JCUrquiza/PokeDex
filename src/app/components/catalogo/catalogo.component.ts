@@ -28,7 +28,7 @@ export class CatalogoComponent implements OnInit {
   }
 
   catalogo() {
-
+    this.arrayResultados = [];
     this.servicePokemon.catalogo(
       ).subscribe((response: any) => {
         // console.log(response);
@@ -36,7 +36,7 @@ export class CatalogoComponent implements OnInit {
           let url = result.url;
           let numeroPokedex = url.split('/', 7)[6];
           this.arrayResultados.push({
-            nombre: result.name,
+            name: result.name,
             numeroPokedex: numeroPokedex
           });
         }
@@ -72,7 +72,6 @@ export class CatalogoComponent implements OnInit {
     let listaInicial = 10;
     let listado = localStorage.getItem('lista');
     let suma = listaInicial + Number(listado);
-
     localStorage.setItem('lista', JSON.stringify(suma));
     this.catalogo();
 

@@ -24,15 +24,19 @@
 
             <table class="table table-striped">
                 <thead>
-                    <tr>
+                    <tr style="text-align: center;">
                         <th>NOMBRE</th>
+                        <th>NÚMERO POKEDEX</th>
                         <th>ACCIÓN</th>
                   </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let pokemon of arrayResultados">
+                    <tr *ngFor="let pokemon of arrayResultados" style="text-align: center;">
                         <td>
-                            {{ pokemon.name | uppercase }}
+                            {{ pokemon.nombre | uppercase }}
+                        </td>
+                        <td>
+                            {{ pokemon.numeroPokedex }}
                         </td>
                         <td>
                             <button class="btn btn-success" (click)="detalles(pokemon)">Detalles</button>

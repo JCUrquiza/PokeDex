@@ -15,6 +15,7 @@ export class DetallePokemonComponent implements OnInit {
   public descripcion = '';
   public color = '';
   public genero = '';
+  public numeroPokedex: number = 0;
 
   public spinner: boolean = true;
 
@@ -40,6 +41,7 @@ export class DetallePokemonComponent implements OnInit {
       .subscribe((response: any) => {
         this.spinner = false;
         // console.log(response);
+        this.numeroPokedex = response.id;
         this.detallesPoke = response;
         this.detallesStats = response.stats;
         this.pokeImagen = response.sprites.front_default;

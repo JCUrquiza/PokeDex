@@ -32,7 +32,15 @@ export class CatalogoComponent implements OnInit {
     this.servicePokemon.catalogo(
       ).subscribe((response: any) => {
         // console.log(response);
-        this.arrayResultados = response.results;
+        for (const result of response.results) {
+          let url = result.url;
+          let numeroPokedex = url.split('/', 7)[6];
+          this.arrayResultados.push({
+            nombre: result.name,
+            numeroPokedex: numeroPokedex
+          });
+        }
+
       }, err => {
         console.log(err);
       });

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokeAppService } from '../../services/poke-app.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +9,13 @@ import { PokeAppService } from '../../services/poke-app.service';
 
 export class HeaderComponent implements OnInit {
 
-  constructor(  ) { }
+  constructor( private ruta: Router ) { }
 
   ngOnInit() {
+  }
+
+  irALista () {
+    this.ruta.navigate(['/']);
   }
 
 }

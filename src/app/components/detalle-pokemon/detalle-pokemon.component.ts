@@ -66,6 +66,7 @@ export class DetallePokemonComponent implements OnInit {
         }, 2000);
 
       });
+
   }
 
   detallePokemonEspecie() {

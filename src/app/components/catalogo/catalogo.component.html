@@ -1,0 +1,49 @@
+<div class="principal card-columns">
+
+    <div class="col-md-12 mb-5">
+
+        <h5>Buscar pokemon:</h5>
+
+        <div style="float: left">
+            <input class="form-control" style="width: 200px;" name="nombre" [(ngModel)]="nombrePokemon">
+            <button class="btn btn-success" style="width: 70px;" (click)="buscarXNombre()">Buscar</button>
+        </div>
+        <div style="float: right;">
+            <button class="btn btn-warning" (click)="siguientesPokemones()">Más pokemones!</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    
+    <div class="col-md-12">
+        
+        <div class="col-md-12">
+            
+            <h3>Lista de pokemones</h3>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>ACCIÓN</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pokemon of arrayResultados">
+                        <td>
+                            {{ pokemon.name | uppercase }}
+                        </td>
+                        <td>
+                            <button class="btn btn-success" (click)="detalles(pokemon)">Detalles</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+    </div>
+
+</div>
+

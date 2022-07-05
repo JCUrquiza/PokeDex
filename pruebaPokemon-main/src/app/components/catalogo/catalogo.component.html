@@ -1,0 +1,34 @@
+<div class="card-columns">
+
+    <h3>Lista de pokemones</h3>
+
+    <button class="btn btn-warning" (click)="siguientesPokemones()">Siguiente</button>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>ACCIÓN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pokemon of arrayResultados">
+                <td>
+                    {{ pokemon.name | uppercase }}
+                </td>
+                <td>
+                    <button class="btn btn-success" (click)="detalles(pokemon)">Detalles</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="col-md-5">
+        <input class="form-control" style="width: 200px;" name="nombre" [(ngModel)]="nombrePokemon">
+        <br />
+        <button class="btn btn-success col-md-2" (click)="buscarXNombre()">Buscar</button>
+    </div>
+
+
+</div>
+

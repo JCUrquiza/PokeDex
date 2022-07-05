@@ -1,0 +1,10 @@
+.principal {
+    border: 3px solid #000000;
+    border-radius: 30px;
+
+    background-color:white;
+    padding:10px 10px 50px 10px;
+    border:1px solid #BFBFBF;
+    box-shadow:10px 10px 30px rgba(0, 0, 0, 0.8);
+
+}

@@ -1,0 +1,40 @@
+<div class="card">
+        
+    <div class="card-body">
+        <!--  [style.background-color]="color" -->
+        <div class="col-md-12">
+            <h2 class="card-body-title" style="text-align: center; border-radius: 20px;">{{ pokeNombre | uppercase }}</h2>
+
+            <div class="row mt-5">
+
+                <div class="col-md-6 card-body">
+                    <img width="300px" height="350px" [src]="pokeImagen">
+                </div>
+                
+                <div class="col-md-6">
+                    <h5>Tipo: {{ genero }}</h5>
+                    <h5 class="card-body-text">
+                        {{ descripcion }}
+                    </h5>
+                    <hr>
+                    <h5>Movimientos: </h5>
+                    <label *ngFor="let movimiento of detallesMovimientos">{{ movimiento.move.name }} , </label>
+                </div>
+
+            </div>
+
+            <div style="border-radius: 15px; padding: 10px; background-color: cornsilk;">
+
+                
+                <div class="mt-3 pt-1" *ngFor="let stats of detallesStats">
+                    <h6><strong>{{ stats.stat.name }}: </strong></h6>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [style.width]="stats.base_stat + '%'" aria-valuemin="0" aria-valuemax="100">{{ stats.base_stat }} %</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>

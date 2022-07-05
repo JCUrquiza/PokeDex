@@ -14,7 +14,8 @@ import { PokeAppService } from './services/poke-app.service';
 import { HeaderComponent } from './components/header/header.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { DetallePokemonComponent } from './components/detalle-pokemon/detalle-pokemon.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms'
     HttpClientModule,
     AppRoutingModule,
     DataTablesModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     PokeAppService

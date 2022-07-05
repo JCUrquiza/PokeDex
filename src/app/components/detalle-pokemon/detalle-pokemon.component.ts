@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PokeAppService } from '../../services/poke-app.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-detalle-pokemon',
@@ -26,6 +27,7 @@ export class DetallePokemonComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private ruta: Router,
     private pokeServicio: PokeAppService
   ) {
     this.pokeNombre = this.activatedRoute.snapshot.paramMap.get('nombre');
@@ -47,7 +49,22 @@ export class DetallePokemonComponent implements OnInit {
         this.pokeImagen = response.sprites.front_default;
         this.detallesMovimientos = response.moves;
       }, err => {
-        console.log(err);
+        // console.log(err);
+        Swal.fire({
+          title: 'Sin resultados',
+          text: '¿Escribiste bien el nombre del pokemon?',
+          icon: 'question',
+          confirmButtonText: 'Volver al inicio'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.ruta.navigate(['/']);
+          }
+        })
+        
+        setTimeout( () => {
+          this.ruta.navigate(['/']);
+        }, 2000);
+
       });
   }
 
@@ -68,7 +85,7 @@ export class DetallePokemonComponent implements OnInit {
           }
         }
       }, err => {
-        console.log(err);
+        // console.log(err);
       });
   }
 

@@ -4,12 +4,14 @@
 
         <h5>Buscar pokemon:</h5>
 
+        
         <div style="float: left">
             <input class="form-control" style="width: 200px;" name="nombre" [(ngModel)]="nombrePokemon">
             <button class="btn btn-success" style="width: 70px;" (click)="buscarXNombre()">Buscar</button>
         </div>
         <div style="float: right;">
-            <button class="btn btn-warning" (click)="siguientesPokemones()">Más pokemones!</button>
+            <button class="btn btn-warning" style="float: left; margin-right: 20px;" (click)="volverPrimeraLista()">Primeros pokemones</button>
+            <button class="btn btn-warning" style="float: right;" (click)="siguientesPokemones()">Más pokemones!</button>
         </div>
     </div>
 
@@ -39,7 +41,9 @@
                             {{ pokemon.numeroPokedex }}
                         </td>
                         <td>
-                            <button class="btn btn-success" (click)="detalles(pokemon)">Detalles</button>
+                            <button class="btn btn-success" (click)="detalles(pokemon)">
+                                Detalles
+                            </button>
                         </td>
                     </tr>
                 </tbody>

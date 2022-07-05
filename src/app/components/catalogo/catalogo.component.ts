@@ -68,13 +68,16 @@ export class CatalogoComponent implements OnInit {
   }
 
   siguientesPokemones () {
-
     let listaInicial = 10;
     let listado = localStorage.getItem('lista');
     let suma = listaInicial + Number(listado);
     localStorage.setItem('lista', JSON.stringify(suma));
     this.catalogo();
+  }
 
+  volverPrimeraLista () {
+    localStorage.setItem('lista', JSON.stringify(0));
+    this.catalogo();
   }
 
 }
